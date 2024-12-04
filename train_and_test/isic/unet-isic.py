@@ -14,8 +14,9 @@ from __future__ import print_function, division
 
 import os
 import sys
-sys.path.append('../..')
+sys.path.append('./datasets')
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 import copy
 import json
@@ -27,6 +28,7 @@ import matplotlib.pyplot as plt
 from matplotlib.image import imread
 import numpy as np
 from tqdm import tqdm
+from datasets.isic import ISIC2018DatasetFast
 
 import torch
 import torch.nn as nn
@@ -66,9 +68,11 @@ random.seed(0)
 
 # In[3]:
 
+CONFIG_NAME = "isic2018_unet.yaml"
+CONFIG_FILE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), CONFIG_NAME)
 
-CONFIG_NAME = "isic/isic2018_unet.yaml"
-CONFIG_FILE_PATH = os.path.join("../../configs", CONFIG_NAME)
+
+
 
 
 # In[4]:

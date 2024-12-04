@@ -34,7 +34,7 @@ import torch.nn.functional as F
 import torch.optim as optim
 import torchmetrics
 from torch.optim import Adam, SGD
-from losses import DiceLoss, DiceLossWithLogtis
+from train_and_test.isic.losses import DiceLoss, DiceLossWithLogtis
 from torch.nn import BCELoss, CrossEntropyLoss
 
 from utils import (
